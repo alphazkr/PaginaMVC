@@ -1,0 +1,84 @@
+﻿
+@{
+    ViewBag.Title = "Misión";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title.</h2>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalPorques">
+    Estrategía 5 porqués
+</button>
+
+
+<!-- Modal -->
+<div class="modal fade" id="modalPorques" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Estrategia de los 5 porqués</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <div class="container">
+                    <h2></h2>
+                    <p>Esta técnica consiste en examinar cualquier problema y realizar la pregunta: <b>'¿Por qué?'</b> La respuesta al primer “porqué” va a generar otro “porqué” y así sucesivamente, todo esto es necesario para analizar la causa raíz del problema.<br> Al final  se deberá <b>proponer una solución</b></b></p>
+                    <font size="3"><b>NOTA: </b>El problema va de lo general a lo particular</font>
+
+                    <p></p>
+                    <div class="abs-center">
+                        <form class="needs-validation border p-3" novalidate>
+
+                            <div class="form-group p5">
+                                <label for="text">¿Por qué?</label>
+                                <input type="text" id="respuestaPorque" class="form-control" placeholder="Porque..." required>
+                                <div class="valid-feedback">Es válido</div>
+                                <div class="invalid-feedback">Complete el campo.</div>
+                            </div>
+
+                            <button type="button" class="btn btn-primary" onclick="responder(this)" id="env">Contestar</button>
+                        </form>
+                    </div>
+                </div>
+
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var cont = 1
+    function responder(btn) {
+        cont++;
+        if (cont <= 5) {
+            var $tx = $(btn).siblings().first('.p5');
+            if (cont == 5) {
+                var z = $tx.html();
+                console.log(z);
+                z = z.replace("¿Por qué?", "Solución"); //Aplica solo en textos y html
+                z = z.replace("Porque...", "La solución sería...");
+                $(btn).before(z);
+                $(btn).after('<button type="submit" class="btn btn-danger" onclick="guardaPorques()">Guardar</button>');
+                $(btn).hide();
+                
+            } else {
+                $(btn).before($tx.html());
+            }
+        }
+    }
+
+    function guardaPorques() {
+
+    }
+
+</script>

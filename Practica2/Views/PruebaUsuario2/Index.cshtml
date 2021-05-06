@@ -1,0 +1,31 @@
+﻿@model List<Practica2.Models.Entity.usuario>
+@{
+    ViewBag.Title = "Datos de la tabla usario";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>VISTA - Base de Datos </h2> 
+
+<div class="row" style="text-align:right;padding:5px;">
+    <a href="~/PruebaUsuario2/Nuevo" class="btn btn-primary" >Nuevo</a>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <table class="table">
+            <tr>
+                <th>Nombre</th>
+                <th>Contraseña </th>
+                <th>Fecha </th>
+            </tr>
+            @foreach(var elemento in Model)
+            {
+                <tr>
+                    <td>@elemento.cNombre</td>
+                    <td>@elemento.cPassword</td>
+                    <td>@elemento.dFecha</td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>

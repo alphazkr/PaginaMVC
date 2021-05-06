@@ -1,0 +1,43 @@
+﻿@model Practica2.Models.usuario
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>usuario</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.cNombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cNombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cPassword)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cPassword)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dFecha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dFecha)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
