@@ -22,7 +22,7 @@ namespace Practica2.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Tu página de contacto desde el controller";
 
             return View();
         }

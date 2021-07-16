@@ -6,12 +6,292 @@
 
 <h2>@ViewBag.Title.</h2>
 
+<p>Trabajamos para explorar, descubrir, y ampliar los conocimientos para el beneficio de la humanidad.</p>
+
+
+<div class="card">
+    <div class="card-body">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+                <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#modalSolicitud">Nueva Solicitud</button>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="revision-tab" data-toggle="tab" href="#revision" role="tab" aria-controls="revision" aria-selected="false">Revisión de Solicitudes</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="valida-tab" data-toggle="tab" href="#valida" role="tab" aria-controls="valida" aria-selected="false">Valida</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="aprueba-tab" data-toggle="tab" href="#aprueba" role="tab" aria-controls="aprueba" aria-selected="false">Aprueba</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="historial-tab" data-toggle="tab" href="#historial" role="tab" aria-controls="historial" aria-selected="false">Historial</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <!-- ****************************    Botón de Nueva Solicitud     ********************************** -->
+            <div class="tab-pane fade show active" id="nueva" role="tabpanel" aria-labelledby="nueva-tab"></div>
+            <!-- ****************************    Menú que Revisión     ********************************** -->
+            <div class="tab-pane fade" id="revision" role="tabpanel" aria-labelledby="revision-tab">
+                <table class="table  table-condensed table-hover table-striped">
+                    <thead>
+                        <tr class="text-center">
+                            <th scope="col">PUESTO</th>
+                            <th scope="col">No. VACANTES</th>
+                            <th scope="col">SOLICITÓ</th>
+                            <th scope="col">FECHA DE SOLICITUD</th>
+                            <th scope="col">VER MÁS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                       
+                    </tbody>
+                </table>
+            </div>
+            <!-- ****************************    Menú que muestra soli validadas para su autorización     ********************************** -->
+            <div class="tab-pane fade" id="valida" role="tabpanel" aria-labelledby="valida-tab">
+                <!-- ****************************    Valida Menu     ********************************** -->
+                <div class="tab-pane fade show  active border border-top-0" id="reclutamiento"
+                     role="tabpanel" aria-labelledby="mishallazgos">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <div class="nav flex-column nav-pills border border-left-0" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                <a class="nav-link" id="v-pills-pendientes-tab" data-toggle="pill" href="#vs-pills-pendientes" role="tab" aria-controls="v-pills-pendientes" aria-selected="true" onclick="vistaAccion('ACCIÓN DE pendientes','s', 2)">Pendientes</a>
+                                <a class="nav-link" id="v-pills-autorizadas-tab" data-toggle="pill" href="#vs-pills-autorizadas" role="tab" aria-controls="v-pills-autorizadas" aria-selected="false" onclick="vistaAccion('ACCIÓN PREVENTIVA','s', 2)">Autorizadas</a>
+                            </div>
+                        </div>
+                        <div class="col-sm-10">
+                            <div class="tab-content" id="v-pills-tabContent">
+                                <div class="tab-pane fade show active text-center" role="tabpanel">
+                                    <b>Selecciona una opcion</b>
+                                </div>
+                                <div class="tab-pane fade p-2" id="vs-pills-pendientes" role="tabpanel" aria-labelledby="v-pills-home-tab" style="height:300px;overflow-y:auto;">
+                                    <a class="text-center"><b>Sin datos en pendientes</b></a>
+                                </div>
+                                <div class="tab-pane fade p-2" id="vs-pills-autorizadas" role="tabpanel" aria-labelledby="v-pills-autorizadas-tab" style="height:300px;overflow-y:auto;">
+                                    <a class="text-center"><b>Sin datos en autorizadas</b></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="tab-pane fade" id="aprueba" role="tabpanel" aria-labelledby="aprueba-tab">Hola 4</div>
+            <div class="tab-pane fade" id="historial" role="tabpanel" aria-labelledby="historial-tab">Hola 5</div>
+        </div>
+
+        <!-- *************************  Modal Nueva Solicitud  ******************************* -->
+        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="modalSolicitud">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <form id="formNuevaSolicitud">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">FR.GRRH.23.06 REQUISICIÓN DE PERSONAL</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container">
+                                <h5 class="text-center">Puesto</h5>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <label class="input-group-text" for="q1">NOMBRE DEL PUESTO: </label>
+                                    </div>
+                                    <select class="custom-select" id="q1" name="cNombrePuesto" required>
+                                        <option value="" selected disabled>SELECCIONA EL PUESTO</option>
+                                        <option value="RVT">RVT</option>
+                                        <option value="RST">RST</option>
+                                        <option value="RTA">RTA</option>
+                                        <option value="ADMVO">ADMVO</option>
+                                    </select>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <label class="input-group-text">No. DE VACANTES: </label>
+                                            </div>
+                                            <input type="number" class="form-control" placeholder="NÚMERO DE VACANTES" min="1" name="nNumVaca" required />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <label class="input-group-text">HORARIO: </label>
+                                            </div>
+                                            <input type="time" class="form-control" title="ENTRADA" name="cHoraEntrada" required />
+                                            <span> _ </span>
+                                            <input type="time" class="form-control" title="SALIDA" name="cHoraSalida" required />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <label class="input-group-text">TIPO DE VACANTE: </label>
+                                    </div>
+                                    <select class="custom-select" id="idTipoVacante" name="cTipoVacante" required>
+                                        <option value="" selected disabled>SELECCIONA EL TIPO DE VACANTE</option>
+                                        <option value="NUEVA">NUEVA</option>
+                                        <option value="REPOSICIÓN">REPOSICIÓN</option>
+                                        <option value="CAMBIO DE PROYECTO">CAMBIO DE PROYECTO</option>
+                                    </select>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <label class="input-group-text">CAMPAÑA ASIGNADA: </label>
+                                    </div>
+                                    <input class="form-control" name="cCampanaAsignada" required />
+                                </div>
+                                <div id="datosExtra">  </div>
+
+                                <hr />
+                                <h6 class="text-center">Requisitos del puesto</h6>
+
+                                <div class="input-group mb-3">
+                                    <div class="row">
+                                        <div class="col-6 themed-grid-col">
+                                            <div class="input-group mb-6 text-center">
+                                                <div class="input-group-prepend">
+                                                    <label class="input-group-text"> GENERO: </label>
+                                                </div>
+                                                <select class="custom-select" name="cGenero" required>
+                                                    <option value="" selected disabled>SELECCIONA GENERO</option>
+                                                    <option value="MASCULINO">MASCULINO</option>
+                                                    <option value="FEMENINO">FEMENINO</option>
+                                                    <option value="INDISTINTO">INDISTINTO</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 themed-grid-col">
+                                            <div class="input-group mb-6 text-center">
+                                                <div class="input-group-prepend">
+                                                    <label class="input-group-text">EDAD: </label>
+                                                </div>
+                                                <input type="number" class="form-control" placeholder="MÍNIMA" min="1" name="nEdadMin" title="Selecciona una edad Mínima" required />
+                                                <span> _ </span>
+                                                <input type="number" class="form-control" placeholder="MÁXIMA" min="1" name="nEdadMax" title="Selecciona una edad Máxima" required />
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="input-group mb-3">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+
+                                            <div class="input-group mb-3  text-center">
+                                                <div class="input-group-prepend">
+                                                    <label class="input-group-text"> ESCOLARIDAD: </label>
+                                                </div>
+                                                <select class="custom-select" id="idEscolaridad" name="cEscolaridad" required>
+                                                    <option value="" selected disabled>SELECCIONA ESCOLARIDAD</option>
+                                                    <option value="SECUNDARIA">SECUNDARIA</option>
+                                                    <option value="PREPARATORIA">PREPARATORIA</option>
+                                                    <option value="LICENCIATURA">LICENCIATURA</option>
+                                                    <option value="OTRA">*OTRO</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+                                                    <label class="input-group-text" for="otraEscolaridad" id="labelOtraEscolaridad">ESPECIFIQUE: </label>
+                                                </div>
+                                                <input class="form-control" title="Especifique la escolaridad." id="otraEscolaridad" name="cOEscolaridad" disabled />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <hr />
+                                <h6 class="text-center">Conocimientos Específicos</h6><!--*********************    **********************-->
+                                <div class="input-group mb-3">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <table class="table table-hover">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">Requiere</th>
+                                                        <th scope="col">Bajo</th>
+                                                        <th scope="col">Medio</th>
+                                                        <th scope="col">Alto</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr class="text-center">
+
+                                                        <th scope="row"><input class="form-control" type="text" placeholder="Conocimiento en.." title="Describe un nuevo conocimiento" id="iConocimiento" /></th>
+                                                        <td><input type="radio" name="radCon" value="BAJO" id="iNivel" /> </td>
+                                                        <td><input type="radio" name="radCon" value="MEDIO" id="iNivel" /></td>
+                                                        <td><input type="radio" name="radCon" value="ALTO" id="iNivel" /></td>
+                                                        <td><button type="button" class="bnt btn-outline-primary" style="border:1px dotted white" onclick="agregarConocimiento()" title="Agregar nuevo conocimiento requerido"><i class="far fa-plus-square"></i></button></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="input-group mb-3 col-sm-12 row" id="nuevoConocimiento">
+                                                <div class=" col-sm-6">
+                                                    <label><b> Se Requiere </b></label>
+                                                </div>
+                                                <div class=" col-sm-6">
+                                                    <label><b>Nivel </b></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <label class="input-group-text" for="iExperiencia"> EXPERIENCIA: </label>
+                                <textarea class="form-control" name="cExperiencia" id="iExperiencia" required> </textarea>
+                                <label class="input-group-text" for="iObservaciones"> OBSERVACIONES: </label>
+                                <textarea class="form-control" name="cObservaciones" id="iObservaciones" required> </textarea>
+
+                            </div> <!--**************  TERMINA CONTAINER ****************-->
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-primary">Guardar Solicitud</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalPorques">
     Estrategía 5 porqués
 </button>
-
-
 <!-- Modal -->
 <div class="modal fade" id="modalPorques" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -70,7 +350,7 @@
                 $(btn).before(z);
                 $(btn).after('<button type="submit" class="btn btn-danger" onclick="guardaPorques()">Guardar</button>');
                 $(btn).hide();
-                
+
             } else {
                 $(btn).before($tx.html());
             }
